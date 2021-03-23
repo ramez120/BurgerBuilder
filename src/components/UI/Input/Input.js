@@ -10,57 +10,65 @@ const Input = (props) => {
     case "input":
       inputElement = (
         <React.Fragment>
-        <input
-          onChange={props.changed}
-         
-          className={inputClasses.join(" ")}
-          {...props.elementConfig}
-          value={props.value}
-        />
-        {!props.valid && props.touched?<label className = {classes.Label}>Please enter valid data!!</label> : null}
+          <input
+            onChange={props.changed}
+            className={inputClasses.join(" ")}
+            {...props.elementConfig}
+            value={props.value}
+          />
+          {!props.valid && props.touched ? (
+            <label className={classes.Label}>Please enter valid data!!</label>
+          ) : null}
         </React.Fragment>
-
       );
       break;
     case "textArea":
       inputElement = (
         <React.Fragment>
-        <textarea
-          onChange={props.changed}
-          className={inputClasses.join(" ")}
-          {...props.elementConfig}
-          value={props.value}
-        />
-        {!props.valid && props.touched?<label className = {classes.Label}>Please enter valid data!!</label> : null}
+          <textarea
+            onChange={props.changed}
+            className={inputClasses.join(" ")}
+            {...props.elementConfig}
+            value={props.value}
+          />
+          {!props.valid && props.touched ? (
+            <label className={classes.Label}>Please enter valid data!!</label>
+          ) : null}
         </React.Fragment>
       );
       break;
     case "select":
       inputElement = (
-             <React.Fragment>
-        <select style={{ width: "100%" }}>
-          onChange = {props.changed}
-          className={inputClasses.join(" ")}
-          {props.elementConfig.options.map((option) => {
-            return <option value={option.value}>{option.displayValue}</option>;
-          })}
-        </select>
-        {!props.valid && props.touched?<label className = {classes.Label}>Please enter valid data!!</label> : null}
+        <React.Fragment>
+          <select
+            style={{ width: "100%" }}
+            onChange={props.changed}
+            className={inputClasses.join(" ")}
+          >
+            {props.elementConfig.options.map((option) => {
+              return (
+                <option value={option.value} key = {option.value}>{option.displayValue}</option>
+              );
+            })}
+          </select>
+          {!props.valid && props.touched ? (
+            <label className={classes.Label}>Please enter valid data!!</label>
+          ) : null}
         </React.Fragment>
-
       );
       break;
     default:
       inputElement = (
         <React.Fragment>
-        <input
-          className={inputClasses.join(" ")}
-          {...props.elementConfig}
-          value={props.value}
-        />
-        {!props.valid && props.touched?<label className = {classes.Label}>Please enter valid data!!</label> : null}
+          <input
+            className={inputClasses.join(" ")}
+            {...props.elementConfig}
+            value={props.value}
+          />
+          {!props.valid && props.touched ? (
+            <label className={classes.Label}>Please enter valid data!!</label>
+          ) : null}
         </React.Fragment>
-
       );
   }
 

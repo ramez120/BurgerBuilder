@@ -15,10 +15,9 @@ const Burger = ({ingredients}) => {
   ).reduce((arr, el)=> {
     return arr.concat(el);
 },[]) ;;
-  if(transformedIngredients.length === 0){
+  if(transformedIngredients.length <= 0){
       transformedIngredients = <p>please add ingredients</p>
   }
-  console.log(ingredients)
   return (
     <div className={classes.Burger}>
       <BurgerIngredient type="bread-top" />

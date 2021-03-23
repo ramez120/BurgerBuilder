@@ -2,7 +2,6 @@ import React from "react";
 import classes from "./Button.module.css";
 const Button = (props) => {
   const buttonType = props.type;
-  console.log(props.disabled);
   return (
     <button
       className={[
