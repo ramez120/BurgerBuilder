@@ -1,4 +1,5 @@
 import * as actionTypes from "../actions/types";
+import {key} from '../../keys/keys';
 import axios from "axios";
 export const authenticationInitiate = () => {
   return {
@@ -32,10 +33,10 @@ export const authenticate = (email, password, authMethod) => {
     };
     dispatch(authenticationInitiate());
     let url =
-      "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBbQp3PcyXerJfgIUtVgUxY41nEuZB7DxE";
+      "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key="+key;
     if (!authMethod) {
       url =
-        "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyBbQp3PcyXerJfgIUtVgUxY41nEuZB7DxE";
+        "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key="+key;
     }
     axios
       .post(url, authData)
