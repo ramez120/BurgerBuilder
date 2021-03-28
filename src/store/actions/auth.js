@@ -2,6 +2,7 @@ import * as actionTypes from "../actions/types";
 //import {key} from '../../keys/keys';
 import axios from "axios";
 let key = process.env.REACT_APP_KEY;
+console.log(key)
 export const authenticationInitiate = () => {
   return {
     type: actionTypes.AUTHENTICATION_INITIATE,
